@@ -3,7 +3,7 @@ $primaryColor: #000000;
 $cta: #d9d9d9;
 $ctaHover: #002432;
 $ctaHoverText: #e4e4e4;
-$space: 1rem;
+$space: 2rem;
 
 * {
     box-sizing: border-box;
@@ -13,5 +13,12 @@ $space: 1rem;
 img {
     max-width: 100%;
     height: auto;
+    padding: $space;
+}
+
+main {
+    background-color: $bg;
+    color: $primaryColor;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: $space;
 }
