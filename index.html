@@ -6,6 +6,7 @@
     <title>Branching scenarios</title>
     <script src="js/script.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/69613b592e.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -30,7 +31,9 @@
             </div>
         </section>
 
-        <!-- INTRO STAGE -->
+
+
+    <!-- INTRO STAGE -->
         <section class="stage intro active">
             <div class="intro__content">
                 <h2>Du har modtaget en mail</h2>
@@ -93,26 +96,162 @@
              </div>
         </section>
 
+
+    <!-- STAGE 2A -->
         <section class="stage stage-2a">
-            <h2>Du har klikket på linket</h2>
-            <p>Du bliver nu bedt om at logge ind på din konto.</p>
-            <img src="img/LogInd fake side.png" alt="Login side for IBA">
-            <p>Hvad gør du nu?</p>
+            <div class="stage__content">
+                <h2>Du har klikket på linket</h2>
+                <p>Du bliver nu bedt om at logge ind på din konto.</p>
+            </div>
+
+            <article class="login" aria-label="Login side til IBA studieportal">
+
+                <!-- TOP BAR / URL -->
+                <div class="login__topbar">
+                    <p>IBA Studie login</p>
+                    <span>http://secure-iba-login.org</span>
+                </div>
+
+                <!-- HEADER / BANNER -->
+                <header class="login__header">
+                    <img class="login__logo" src="img/iba logo.png" alt="IBA logo">
+                </header>
+
+                <!-- CONTENT -->
+                <div class="login__content">
+                    <h3>IBA Koldings studieportal</h3>
+                    <p>Log ind her med MitID, for at få adgang til din studieportal</p>
+
+                    <div class="login__box">
+
+                        <!-- FORM -->
+                        <form class="login__form">
+                            <label for="user">BRUGER-ID</label>
+                            <input id="user" type="text" placeholder="">
+
+                            <button type="button" class="login__btn" disabled>FORTSÆT →</button>
+
+                            <a href="#" class="login__help">Glemt bruger-ID?</a>
+                        </form>
+
+                        <!-- MITID IMAGE -->
+                        <div class="login__mitid">
+                            <img src="img/Mit Id fake logo.png" alt="MitID logo">
+                        </div>
+
+                    </div>
+                </div>
+            </article>
+
+            <div class="stage__question">
+                <p>Hvad gør du nu?</p>
+            </div>
+
+            <div class="stage__actions">
                 <button class="btn">Indtaster mine oplysninger</button>
                 <button class="btn">Stopper op og går tilbage</button>
+            </div>
         </section>
 
+
+    <!-- STAGE 3A -->
         <section class="stage stage-3a">
-            <img src="img/3A.png" alt="Login side for IBA med advarsel om at det er en falsk side">
-            <h2>Vil du prøve igen?</h2>
-            <button class="btn">Tilbage til start</button>
+
+            <article class="result result--danger">
+
+                <!-- IKON -->
+                <div class="result__icon">
+                    <i class="fa-regular fa-triangle" style="color: rgb(239, 28, 28);"></i>
+                </div>
+
+                <!-- TEKST -->
+                <div class="result__content">
+                    <h2>Du er nu logget ind... men ikke på IBA's rigtige side</h2>
+
+                    <p>Det site du netop har indtastet dine oplysninger på, er en falsk kopi af IBA's login. Det betyder at dine loginoplysninger nu kan være blevet opsnappet af en tredjepart.</p>
+
+                    <p>En hacker kan herefter få adgang til din studieprofil og potentielt:</p>
+
+                    <ul>
+                        <li>Læse dine beskeder og personlige oplysninger</li>
+                        <li>Ændre din adgangskode</li>
+                        <li>Misbruge din konto til at sende falske mails til andre</li>
+                    </ul>
+
+                    <h3>Hvorfor skete det?</h3>
+                    <p>Selvom siden lignede den rigtige, var linket ikke fra IBA's officielle domæne (iba.dk). Phishing-angreb udnytter netop dette. De kopierer design og indhold for at få dig til at stole på siden.</p>
+
+                    <h3>Hvad kan du lære af det?</h3>
+                    <ul>
+                        <li>Tjekke afsenderens mailadresse</li>
+                        <li>Undersøge linket (hover/URL)</li>
+                        <li>Være opmærksom på tidspres og “handle nu”-beskeder</li>
+                    </ul>
+                </div>
+
+                <!-- MASKOT -->
+                <div class="result__image">
+                    <img src="img/3A maskot.png" alt="Bekymret maskot med advarsel">
+                </div>
+
+            </article>
+
+                <!-- HANDLING -->
+                <div class="result__actions">
+                    <h2>Vil du prøve igen?</h2>
+                    <button class="btn">Tilbage til start</button>
+                </div>
+
         </section>
 
+
+
+    <!-- STAGE 3B -->
         <section class="stage stage-3b">
-            <img src="img/3B.png" alt="Godt du stoppede op, men der er stadig nogle ting at lære">
-            <h2>Vil du prøve igen?</h2>
-            <button class="btn">Tilbage til start</button>
+
+            <article class="result result--warning">
+
+                <!-- IKON -->
+                <div class="result__icon">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: rgb(255, 212, 59);"></i>
+                </div>
+
+                <!-- TEKST -->
+                <div class="result__content">
+                    <h2>Du stoppede i tide ... men ikke helt!</h2>
+
+                    <p>Godt at du reagerede og ikke indtastede dine oplysninger.</p>
+                    <p>Men fordi du allerede har klikket på linket, har du besøgt en falsk hjemmeside.</p>
+
+                    <p>Det kan være risikabelt, da siden kan forsøge at:</p>
+
+                    <ul>
+                        <li>Installere skadelig software</li>
+                        <li>Registrere din aktivitet</li>
+                        <li>Eller narre dig til at give flere oplysninger</li>
+                    </ul>
+
+                    <p>Det sikreste valg er at opdage phishing <strong>før</strong> du klikker på linket.</p>
+
+                    <p>Tjek altid afsender og link før du klikker - især når det haster.</p>
+                </div>
+
+                <!-- ILLUSTRATION -->
+                <div class="result__image">
+                    <img src="img/3B maskot.png" alt="Maskot der peger på en falsk login-side med advarsel">
+                </div>
+
+            </article>
+
+            <!-- HANDLING -->
+            <div class="result__actions">
+                <h2>Vil du prøve igen?</h2>
+                <button class="btn">Tilbage til start</button>
+            </div>
+
         </section>
+
+
 
         <section class="stage stage-2b">
             <h2>Du tjekker afsenderen</h2>

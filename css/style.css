@@ -14,13 +14,12 @@ img {
   padding: 1rem;
 }
 
-.stage {
-  display: none;
-}
-.stage.active {
-  display: block;
-}
-
+/*.stage {
+    display: none;
+    &.active {
+        display: block;
+    }
+}*/
 .stage--split.active {
   display: grid;
   grid-template-columns: 1fr 1fr;

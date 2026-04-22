@@ -21,12 +21,12 @@ img {
     padding: $space/2;
 }
 
-.stage {
+/*.stage {
     display: none;
     &.active {
         display: block;
     }
-}
+}*/
 
 .stage--split.active {
     display: grid;
