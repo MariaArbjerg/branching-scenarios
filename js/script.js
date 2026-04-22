@@ -3,14 +3,15 @@ const btns = document.querySelectorAll(".btn");
 const nextStage = (e) => {
     // console.log("Clicked");
     console.log(e.target.textContent);
-    switch(e.target.dataset.action) {
-        case "start": 
-            console.log("Start was clicked");
-            // Herfra fortsætter vi næste gang
-        break;
-        default: console.log("Something else was clicked");
+    const currentStage = document.querySelector(".stage.active");
+    const nextStageClass = e.target.dataset.next;
 
-    }
+    if (!nextStageClass) return;
+
+    const next = document.querySelector(`.${nextStageClass}`);
+
+    currentStage.classList.remove("active");
+    next.classList.add("active");
 };
 
 for (const btn of btns) {

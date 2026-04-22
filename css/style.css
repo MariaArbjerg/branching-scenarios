@@ -14,25 +14,30 @@ img {
   padding: 1rem;
 }
 
-.active {
+.stage {
+  display: none;
+}
+.stage.active {
+  display: block;
+}
+
+.stage--split.active {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 2rem;
 }
-.active .text {
+.stage--split.active .text {
   grid-column: 1/2;
   grid-row: auto;
 }
-.active .image {
+.stage--split.active .image {
   grid-column: 2/3;
+  grid-row: 1/3;
 }
-.active .image img {
+.stage--split.active .image img {
   width: 100%;
   height: auto;
-}
-.active .image {
-  grid-row: 1/3;
 }
 
 main {
