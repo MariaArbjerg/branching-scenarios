@@ -30,15 +30,67 @@
             </div>
         </section>
 
-        <section class="stage intro">
-            <h2>Du har modtaget en mail</h2>
-            <p>Du er lige startet på dit nye studie, og du modtager denne mail.</p>
-            <p>Mailen beder dig om at aktivere din studieprofil via et link.</p>
-            <img src="img/Mail1.png" alt="Mail fra IBA, som beder dig om at aktivere din studieprofil via et link">
-            <p>Hvad gør du nu?</p>
-                <button class="btn" data-next="stage-2a">Klikker på linket</button>
-                <button class="btn" data-next="stage-2b">Tjekker afsenderen</button>
-                <button class="btn" data-next="stage-2c">Ignorerer den</button>
+        <!-- INTRO STAGE -->
+        <section class="stage intro active">
+            <div class="intro__content">
+                <h2>Du har modtaget en mail</h2>
+                <p>Du er lige startet på dit nye studie, og du modtager denne mail.</p>
+                <p>Mailen beder dig om at aktivere din studieprofil via et link.</p>
+            </div>
+
+            <article class="mail" aria-label="Mail fra IBA om aktivering af studieprofil">
+                <header class="mail__header">
+                    <div class="mail__sender">
+                        <div class="mail__avatar">LN</div>
+
+                        <div class="mail__sender-info">
+                            <p class="mail__name">Ludvig Niels Henning Madsen</p>
+                            <p class="mail__to">Til: MMDsEDK27A og 3 mere... &gt;</p>
+                        </div>
+                    </div>
+                    <p class="mail__date">08.05.26</p>
+                </header>
+
+                <div class="mail__body">
+                    <h3><strong>Emne:</strong> Velkommen til IBA - Aktivér din studieprofil.</h3>
+
+                    <p>Hej og velkommen til IBA Kolding!</p>
+
+                    <p>Tillykke med din optagelse på IBA. Vi glæder os til at byde dig velkommen som studerende.</p>
+
+                    <p>For at komme godt i gang med dit studie, skal du aktivere din studieprofil via vores studieportal. Her får du blandt andet adgang til:</p>
+
+                    <ul class="mail__list">
+                        <li>Dit personlige skema</li>
+                        <li>Studiekort</li>
+                        <li>Klasseinformation</li>
+                        <li>Opgaver og undervisningsmateriale</li>
+                    </ul>
+
+                    <p class="mail__cta">
+                        👉 <strong>Klik her for at aktivere din profil:</strong><br>
+                        <a href="#" class="mail__link">www.iba-studyportal.com/login →</a>
+                    </p>
+
+                    <p>Bemærk: Det er vigtigt at du aktiverer din profil inden for 24 timer, ellers vil din adgang midlertidigt blive deaktiveret.</p>
+
+                    <div class="mail__signature">
+                        <p>Med venlig hilsen</p>
+                        <p><strong>IBA Kolding</strong><br>Studieadministrationen</p>
+                        <img class="mail__logo" src="img/iba logo.png" alt="IBA logo i mail signatur">
+                    </div>
+                </div>
+            </article>
+
+            <div class="intro__question">
+                <p>Hvad gør du nu?</p>
+            </div>
+
+            <div class="intro__actions">
+                <button class="btn">Klikker på linket</button>
+                <button class="btn">Tjekker afsenderen</button>
+                <button class="btn">Ignorerer den</button>
+             </div>
         </section>
 
         <section class="stage stage-2a">
