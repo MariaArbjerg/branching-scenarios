@@ -1,87 +1,298 @@
 $bg: #ffffff;
-$primaryColor: #000000;
+$text: #111111;
 $cta: #d9d9d9;
-$ctaHover: #002432;
-$ctaHoverText: #e4e4e4;
+$cta-hover: #002432;
+$cta-hover-text: #e4e4e4;
 $space: 2rem;
 
-* {
+*{
     box-sizing: border-box;
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 0;
 }
 
-img {
-    width: 100%;
+/* GENEREL STYLING */
+
+body{
+    background-color: $bg;
+    color: $text;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+}
+
+img{
+    display: block;
+    max-width: 100%;
     height: auto;
+}
+
+main{
     padding: $space;
 }
 
-.banner {
-    padding: $space/2;
+h1 {
+    font-size: 2rem;
+    margin-bottom: $space;
 }
 
-/*.stage {
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: $space / 2;
+}
+
+h3 {
+    font-size: 1.25rem;
+    margin-bottom: $space / 2;
+}
+
+p {
+    font-size: 1.125rem;
+    margin-bottom: $space / 2;
+}
+
+/*.stage{
     display: none;
-    &.active {
+    &.active{
         display: block;
     }
 }*/
 
-.stage--split.active {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: $space;
-    .text {
-        grid-column: 1/2;
-        grid-row: auto;
+.btn{
+    background-color: $cta;
+    color: $text;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+
+    &:hover{
+        background-color: $cta-hover;
+        color: $cta-hover-text;
     }
-    .image {
-        grid-column: 2/3;
-        grid-row: 1/3;
+}
+
+
+
+/* HEADER BANNER */
+header{
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+
+/* VELKOMSTSIDEN */
+.stage--split{
+    &.active{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $space;
+        align-items: center;
+    }
+
+    .text{
+        p:last-of-type{
+            margin-bottom: $space;
+        }
+    }
+
+    .image{
         img{
             width: 100%;
-            height: auto;
+            max-width: 500px;
+            margin: 0 auto;
         }
     }
 }
 
-main {
-    background-color: $bg;
-    color: $primaryColor;
-    padding: $space;
-}
+/* STAGE INTRO */
 
-p {
-    margin-bottom: $space/4;
-    font-size: 18px;
-}
+.intro {
+    margin: 0 auto;
 
-h2 {
-    margin-bottom: $space/2;
-    font-size: 24px;
-}
+    &__content{
+        margin-bottom: $space;
+    }
 
-h1 {
-    margin-bottom: $space/2;
-    font-size: 32px;
-}
+    &__question{
+        margin: $space 0 1rem;
 
-.btn{
-    background-color: $cta;
-    color: $primaryColor;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: $space;
-    cursor: pointer;
-    margin-top: $space;
-    margin-bottom: $space*2;
-    transition: all 0.3s ease;
-    font-size: 18px;
+        p{
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+    }
 
-    &:hover {
-        background-color: $ctaHover;
-        color: $ctaHoverText;
+    &__actions{
+        display: flex;
+        flex-wrap: wrap;
+        gap: $space / 2;
     }
 }
+
+.mail{
+    background-color: $bg;
+    border: 1px solid $cta;
+    margin-bottom: $space;
+    max-width: 900px;
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: $space / 2;
+        padding: 1.25rem;
+        background-color: #f5f5f5;
+        border-bottom: 1px solid $cta;
+    }
+
+    &__sender{
+        display: flex;
+        align-items: center;
+        gap: $space / 2;
+    }
+
+    &__avatar{
+        width: $space * 2.25;
+        height: $space * 2.25;
+        border-radius: 50%;
+        background-color: #d8d8d8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: $space;
+        flex-shrink: 0;
+    }
+
+    &__name{
+        font-size: 1.5rem;
+        margin-bottom: 0.15rem;
+        }
+
+    &__to, &__date{
+        color: #666666;
+        font-size: $space / 2;
+        margin-bottom: 0;
+        }
+
+        &__body{
+            padding: 1.5rem $space;
+        }
+
+        &__list{
+            margin-left: 1.5rem;
+            margin-bottom: $space / 2;
+        }
+
+        &__cta{
+            margin-top: $space / 2;
+        }
+
+        &__link{
+            text-decoration: underline;
+            word-break: break-word;
+        }
+
+        &__signature{
+            margin-top: $space;
+            font-style: italic;
+        }
+
+        &__logo{
+            width: 180px;
+            margin-top: $space / 2;
+        }
+
+}
+
+/* STAGE 2A */
+
+.login{
+    background-color: #edf0f2;
+    margin-bottom: $space;
+
+    &__topbar{
+        width: fit-content;
+        margin: $space/2 auto;
+        background-color: #f6f6f6;
+        border-radius: 999px;
+        padding: 0.35rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        p, span{
+            margin-bottom: 0;
+            font-size: 0.95rem;
+        }
+
+        span{
+            color: #888888;
+        }
+    }
+
+    &__logo{
+        width: 100%;
+        height: auto;
+    }
+
+    &__content{
+        padding: $space*1.5 $space $space*2;
+
+        > p{
+            margin-bottom: $space*1.5;
+        }
+    }
+
+    &__form{
+        flex: 1;
+
+        label{
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: $space/2;
+        }
+
+        input{
+            width: 100%;
+            max-width: 340px;
+            padding: 1rem;
+            border: 1px solid #4b6fff;
+            border-radius: 0.35rem;
+            margin-bottom: 0.75rem;
+            font-size: $space/2;
+        }
+    }
+
+        &__btn {
+            width: 100%;
+            max-width: 340px;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.35rem;
+            background-color: #bdbdbd;
+            color: #ffffff;
+            font-weight: 700;
+            text-align: left;
+            margin-bottom: 0.75rem;
+            }
+
+        &__help {
+            color: #2457e0;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        &__mitid {
+            img {
+            width: 300px;
+            }
+        }
+    }
+
+
+/* STAGE 3A */
