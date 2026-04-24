@@ -17,7 +17,7 @@
     <main>
         <h1>Hvordan reagerer du når du modtager en mail?</h1>
         
-        <section class="stage stage--split active">
+        <section class="stage stage--split active"> <!-- index 0 -->
             <div class="text">
                 <h2>Velkommen til dit nye studie</h2>
                 <p>Du er netop startet som studerende på IBA Kolding, og din indbakke begynder allerede at blive fyldt med mails om skema, studieplatforme og anden vigtig information</p>
@@ -34,7 +34,7 @@
 
 
     <!-- INTRO STAGE -->
-        <section class="stage intro">
+        <section class="stage intro"> <!-- index 1 -->
             <div class="intro__content">
                 <h2>Du har modtaget en mail</h2>
                 <p>Du er lige startet på dit nye studie, og du modtager denne mail.</p>
@@ -79,15 +79,15 @@
                 <p>Hvad gør du nu?</p>
             </div>
             <div class="intro__actions">
-                <button class="btn">Klikker på linket</button>
-                <button class="btn">Tjekker afsenderen</button>
-                <button class="btn">Ignorerer den</button>
+                <button class="btn">Klikker på linket!</button> <!-- sendes til index 2 -->
+                <button class="btn">Tjekker afsenderen</button> <!-- sendes til index 5 -->
+                <button class="btn">Ignorerer den</button> <!-- sendes til index 6 -->
              </div>
         </section>
 
 
     <!-- STAGE 2A -->
-        <section class="stage stage-2a">
+        <section class="stage stage-2a"> <!-- index 2 -->
             <div class="stage__content">
                 <h2>Du har klikket på linket</h2>
                 <p>Du bliver nu bedt om at logge ind på din konto.</p>
@@ -125,18 +125,18 @@
                 <p>Hvad gør du nu?</p>
             </div>
             <div class="stage__actions">
-                <button class="btn">Indtaster mine oplysninger</button>
-                <button class="btn">Stopper op og går tilbage</button>
+                <button class="btn">Indtaster mine oplysninger</button> <!-- sendes til index 3 -->
+                <button class="btn">Stopper op og går tilbage</button> <!-- sendes til index 1 -->
             </div>
         </section>
 
 
     <!-- STAGE 3A -->
-        <section class="stage stage-3a">
+        <section class="stage stage-3a"> <!-- index 3 -->
             <article class="result result--danger">
                 <!-- IKON -->
                 <div class="result__icon">
-                    <i class="fa-regular fa-triangle" style="color: rgb(239, 28, 28);"></i>
+                    <i class="fa-regular fa-triangle"></i>
                 </div>
                 <!-- TEKST -->
                 <div class="result__content">
@@ -172,7 +172,7 @@
 
 
     <!-- STAGE 3B -->
-        <section class="stage stage-3b">
+        <section class="stage stage-3b"> <!-- index 4 -->
             <article class="result result--warning">
                 <!-- IKON -->
                 <div class="result__icon">
@@ -206,7 +206,7 @@
 
 
     <!-- STAGE 2B -->
-        <section class="stage stage-2b">
+        <section class="stage stage-2b"> <!-- index 5 -->
             <div class="stage__content">
                 <h2>Du tjekker afsenderen</h2>
                 <p>Du kigger nærmere på mailen.</p>
@@ -241,15 +241,15 @@
                 <p>Hvad gør du nu?</p>
             </div>
             <div class="stage__actions">
-                <button class="btn">Sletter mailen</button>
-                <button class="btn">Tjekker IBA's officielle hjemmeside</button>
-                <button class="btn">Klikker på linket</button>
+                <button class="btn">Sletter mailen</button> <!-- sendes til index 6 -->
+                <button class="btn">Tjekker IBA's officielle hjemmeside</button> <!-- sendes til index 8 -->
+                <button class="btn">Klikker på linket</button> <!-- sendes til index 2 -->
             </div>
         </section>
 
 
     <!-- STAGE 2C -->
-        <section class="stage stage-2c">
+        <section class="stage stage-2c"> <!-- index 6 -->
             <article class="result result--neutral">
                 <div class="result__image">
                     <img src="img/2C maskot.png" alt="Tænksom maskot der overvejer om mailen er vigtig eller falsk">
@@ -265,14 +265,14 @@
                 <p>Hvad gør du nu?</p>
             </div>
             <div class="stage__actions">
-                <button class="btn">Ignorer og slet mailen helt</button>
-                <button class="btn">Kontakt skolen via officielle kanaler</button>
+                <button class="btn">Ignorer og slet mailen helt</button> <!-- sendes til index 7 -->
+                <button class="btn">Kontakt skolen via officielle kanaler</button> <!-- sendes til index 8 -->
              </div>
         </section>
 
     
     <!-- STAGE 3E -->
-       <section class="stage stage-3e">
+       <section class="stage stage-3e"> <!-- index 7 -->
             <article class="result result--muted">
                 <div class="result__image">
                     <img src="img/3E maskot.png" alt="Maskot der viser usikkerhed efter at mailen er blevet ignoreret">
@@ -293,7 +293,7 @@
 
         
     <!-- STAGE 3F -->
-        <section class="stage stage-3f">
+        <section class="stage stage-3f"> <!-- index 8 -->
             <article class="result result--success">
 
                 <div class="result__image">

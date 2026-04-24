@@ -42,12 +42,13 @@ p {
   margin-bottom: 1rem;
 }
 
-/*.stage{
-    display: none;
-    &.active{
-        display: block;
-    }
-}*/
+.stage {
+  display: none;
+}
+.stage.active {
+  display: block;
+}
+
 .btn {
   background-color: #d9d9d9;
   color: #111111;
@@ -76,10 +77,12 @@ header img {
   gap: 2rem;
   align-items: center;
 }
-.stage--split .text p:last-of-type {
+
+.text p:last-of-type {
   margin-bottom: 2rem;
 }
-.stage--split .image img {
+
+.image img {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
@@ -201,6 +204,17 @@ header img {
 .login__content > p {
   margin-bottom: 3rem;
 }
+.login__box {
+  background-color: #f2f2f2;
+  border: 1px solid #d0d0d0;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
 .login__form {
   flex: 1;
 }
@@ -239,4 +253,75 @@ header img {
   width: 300px;
 }
 
-/* STAGE 3A *//*# sourceMappingURL=style.css.map */
+/* STAGE 3A */
+.result {
+  max-width: 1100px;
+  margin: 0 0 2rem 0;
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: 100px 1fr 250px;
+  gap: 2rem;
+  align-items: start;
+  border-radius: 1rem;
+}
+.result__icon {
+  display: flex;
+  justify-content: flex-start;
+}
+.result__icon i {
+  font-size: 4rem;
+}
+.result__content {
+  text-align: left;
+}
+.result__content h2, .result__content h3 {
+  margin-bottom: 1rem;
+}
+.result__content p {
+  margin-bottom: 1rem;
+}
+.result__content ul {
+  margin-bottom: 1rem;
+}
+.result__image {
+  display: flex;
+  justify-content: flex-end;
+}
+.result__image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.result__actions {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 0 2rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+.result__actions h2, .result__actions p {
+  margin-bottom: 0;
+}
+
+.result--danger {
+  background-color: #f5d0d0;
+}
+
+.stage-3a .result__icon i {
+  color: rgb(239, 28, 28);
+}
+
+/* STAGE 3B */
+.result--warning {
+  background-color: #f2dda4;
+}
+
+.stage-3b .result__icon i {
+  color: rgb(255, 212, 59);
+}
+.stage-3b .result__image img {
+  max-width: none;
+  width: 350px;
+}/*# sourceMappingURL=style.css.map */

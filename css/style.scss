@@ -50,12 +50,12 @@ p {
     margin-bottom: $space / 2;
 }
 
-/*.stage{
+.stage{
     display: none;
     &.active{
         display: block;
     }
-}*/
+}
 
 .btn{
     background-color: $cta;
@@ -86,8 +86,7 @@ header{
 
 
 /* VELKOMSTSIDEN */
-.stage--split{
-    &.active{
+.stage--split.active{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: $space;
@@ -107,7 +106,6 @@ header{
             margin: 0 auto;
         }
     }
-}
 
 /* STAGE INTRO */
 
@@ -248,6 +246,18 @@ header{
         }
     }
 
+    &__box {
+        background-color: #f2f2f2;
+        border: 1px solid #d0d0d0;
+        max-width: 850px;
+        margin: 0 auto;
+        padding: $space;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: $space;
+    }
+
     &__form{
         flex: 1;
 
@@ -268,31 +278,119 @@ header{
         }
     }
 
-        &__btn {
-            width: 100%;
-            max-width: 340px;
-            padding: 1rem;
-            border: none;
-            border-radius: 0.35rem;
-            background-color: #bdbdbd;
-            color: #ffffff;
-            font-weight: 700;
-            text-align: left;
-            margin-bottom: 0.75rem;
-            }
-
-        &__help {
-            color: #2457e0;
-            text-decoration: none;
-            font-weight: 600;
+    &__btn {
+        width: 100%;
+        max-width: 340px;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.35rem;
+        background-color: #bdbdbd;
+        color: #ffffff;
+        font-weight: 700;
+        text-align: left;
+        margin-bottom: 0.75rem;
         }
 
-        &__mitid {
-            img {
-            width: 300px;
-            }
+    &__help {
+        color: #2457e0;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    &__mitid {
+        img {
+        width: 300px;
         }
     }
+}
 
 
 /* STAGE 3A */
+
+.result {
+    max-width: 1100px;
+    margin: 0 0 $space 0;
+    padding: $space;
+    display: grid;
+    grid-template-columns: 100px 1fr 250px;
+    gap: $space;
+    align-items: start;
+    border-radius: 1rem;
+
+    &__icon {
+        display: flex;
+        justify-content: flex-start;
+
+        i {
+            font-size: 4rem;
+        }
+    }
+
+    &__content {
+        text-align: left;
+
+        h2, h3 {
+            margin-bottom: $space / 2;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul {
+            margin-bottom: $space / 2;
+        }
+    }
+
+    &__image {
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.result__actions {
+        max-width: 1100px;
+        width: 100%;
+        margin: 0 0 $space 0;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: $space / 2;
+
+        h2, p {
+            margin-bottom: 0;
+        }
+    }
+
+.result--danger {
+    background-color: #f5d0d0;
+}
+
+.stage-3a {
+    .result__icon i {
+        color: rgb(239, 28, 28);
+    }
+}
+
+/* STAGE 3B */
+
+.result--warning {
+    background-color: #f2dda4;
+}
+
+.stage-3b {
+    .result__icon i {
+        color: rgb(255, 212, 59);
+    }
+
+    .result__image img {
+        max-width: none;
+        width: 350px;
+    }
+}
+
