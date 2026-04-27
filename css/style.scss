@@ -6,6 +6,8 @@
     padding: 0;
 }
 
+
+
 /* GENEREL STYLING */
 
 body{
@@ -54,10 +56,12 @@ p {
     @include btn;
     background-color: $cta;
     color: $text;
+    transition: all 0.2s ease;
 
     &:hover{
         background-color: $cta-hover;
         color: $cta-hover-text;
+        transform: translateY(-2px);
     }
 }
 
@@ -538,8 +542,10 @@ header{
     }
 
     .intro__actions, .stage__actions, .result__actions{
+        display: flex;
         flex-direction: column;
         align-items: flex-start;
+        gap: $space-small;
     }
 
     .btn{
@@ -670,6 +676,12 @@ header{
             ul{
                 padding-left: $space-small;
             }
+        }
+    }
+
+    .stage-2a{
+        .stage__actions{
+            margin-top: $space-small;
         }
     }
 }

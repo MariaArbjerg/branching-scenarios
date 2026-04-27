@@ -65,10 +65,12 @@ p {
   font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
   background-color: #d9d9d9;
   color: #111111;
+  transition: all 0.2s ease;
 }
 .btn:hover {
   background-color: #002432;
   color: #e4e4e4;
+  transform: translateY(-2px);
 }
 
 /* HEADER BANNER */
@@ -481,8 +483,10 @@ header img {
     max-width: 240px;
   }
   .intro__actions, .stage__actions, .result__actions {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
+    gap: 1rem;
   }
   .btn {
     width: 100%;
@@ -572,5 +576,8 @@ header img {
   }
   .stage-3a .result__content ul {
     padding-left: 1rem;
+  }
+  .stage-2a .stage__actions {
+    margin-top: 1rem;
   }
 }/*# sourceMappingURL=style.css.map */
