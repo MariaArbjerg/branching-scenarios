@@ -20,6 +20,7 @@ const nextStage = (e) => {
             break;
         case "Ignorerer den":
             stages[1].classList.remove("active");
+            stages[5].classList.remove("active")
             stages[6].classList.add("active");
             break;
         case "Indtaster mine oplysninger":
@@ -29,10 +30,6 @@ const nextStage = (e) => {
         case "Stopper op og går tilbage":
             stages[2].classList.remove("active");
             stages[1].classList.add("active");
-            break;
-        case "Sletter mailen":
-            stages[5].classList.remove("active");
-            stages[6].classList.add("active");
             break;
         case "Tjekker IBA's officielle hjemmeside":
             stages[5].classList.remove("active");
