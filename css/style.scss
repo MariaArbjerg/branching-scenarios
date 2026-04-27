@@ -1,9 +1,4 @@
-$bg: #ffffff;
-$text: #111111;
-$cta: #d9d9d9;
-$cta-hover: #002432;
-$cta-hover-text: #e4e4e4;
-$space: 2rem;
+@use "partial" as *;
 
 *{
     box-sizing: border-box;
@@ -21,9 +16,7 @@ body{
 }
 
 img{
-    display: block;
-    max-width: 100%;
-    height: auto;
+    @include image-fluid;
 }
 
 main{
@@ -31,23 +24,23 @@ main{
 }
 
 h1 {
-    font-size: 2rem;
+    font-size: $font-h1;
     margin-bottom: $space;
 }
 
 h2 {
-    font-size: 1.75rem;
-    margin-bottom: $space / 2;
+    font-size: $font-h2;
+    margin-bottom: $space-small;
 }
 
 h3 {
-    font-size: 1.25rem;
-    margin-bottom: $space / 2;
+    font-size: $font-h3;
+    margin-bottom: $space-small;
 }
 
 p {
-    font-size: 1.125rem;
-    margin-bottom: $space / 2;
+    font-size: $font-base;
+    margin-bottom: $space-small;
 }
 
 .stage{
@@ -58,14 +51,9 @@ p {
 }
 
 .btn{
+    @include btn;
     background-color: $cta;
     color: $text;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 999px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 600;
 
     &:hover{
         background-color: $cta-hover;
@@ -87,10 +75,7 @@ header{
 
 /* VELKOMSTSIDEN */
 .stage--split.active{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: $space;
-        align-items: center;
+        @include two-column-grid;
     }
 
     .text{
@@ -126,26 +111,22 @@ header{
     }
 
     &__actions{
-        display: flex;
-        flex-wrap: wrap;
-        gap: $space / 2;
+        @include flex-wrap;
     }
 }
 
 .mail{
     background-color: $bg;
-    border: 1px solid $cta;
+    border: 1px solid $border-grey;
     margin-bottom: $space;
-    max-width: 900px;
+    max-width: $mail-width;
 
     &__header{
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: $space / 2;
-        padding: 1.25rem;
-        background-color: #f5f5f5;
-        border-bottom: 1px solid $cta;
+        @include flex-between;
+        gap: $space-small;
+        padding: $space-small;
+        background-color: $light-grey;
+        border-bottom: 1px solid $border-grey;
     }
 
     &__sender{
@@ -155,14 +136,12 @@ header{
     }
 
     &__avatar{
-        width: $space * 2.25;
-        height: $space * 2.25;
+        width: $space * 2;
+        height: $space * 2;
         border-radius: 50%;
-        background-color: #d8d8d8;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: $space;
+        background-color: $border-grey;
+        @include flex-center;
+        font-size: $font-h3;
         flex-shrink: 0;
     }
 
@@ -249,12 +228,10 @@ header{
     &__box {
         background-color: #f2f2f2;
         border: 1px solid #d0d0d0;
-        max-width: 850px;
+        max-width: $content-width - 250px;
         margin: 0 auto;
         padding: $space;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
+        @include flex-between;
         gap: $space;
     }
 
@@ -308,14 +285,10 @@ header{
 /* STAGE 3A */
 
 .result {
-    max-width: 1100px;
+    max-width: $content-width;
     margin: 0 0 $space 0;
-    padding: $space;
-    display: grid;
-    grid-template-columns: 100px 1fr 250px;
-    gap: $space;
-    align-items: start;
-    border-radius: 1rem;
+    @include card;
+    @include result-grid;
 
     &__icon {
         display: flex;
@@ -347,28 +320,31 @@ header{
         justify-content: flex-end;
 
         img {
-            max-width: 100%;
-            height: auto;
+            width: 100%;
+            max-width: $image-width;
+            margin: 0 auto;
         }
     }
 }
 
 .result__actions {
-        max-width: 1100px;
+        max-width: $content-width;
         width: 100%;
         margin: 0 0 $space 0;
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: $space / 2;
+        gap: $space-small;
 
         h2, p {
             margin-bottom: 0;
+            font-size: $font-base;
+            font-weight: 700;
         }
     }
 
 .result--danger {
-    background-color: #f5d0d0;
+    background-color: $danger;
 }
 
 .stage-3a {
@@ -377,10 +353,11 @@ header{
     }
 }
 
+
 /* STAGE 3B */
 
 .result--warning {
-    background-color: #f2dda4;
+    background-color: $warning;
 }
 
 .stage-3b {
@@ -394,3 +371,305 @@ header{
     }
 }
 
+
+/* STAGE 2B */
+.stage-2b{
+    .stage__content{
+        margin-bottom: $space;
+    }
+
+    .mail--focus{
+        .highlight{
+            display: inline-block;
+            background-color: $warning;
+            padding: 0.25rem 0.5rem;
+            border-radius: $radius-small;
+            font-weight: 700;
+            margin-bottom: $space-small;
+        }
+    }
+
+    .stage__info{
+        background-color: $light-grey;
+        border-left: 5px solid $warning;
+        padding: $space-small;
+        margin-bottom: $space;
+
+        p{
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+    }
+
+    .stage__question{
+        margin-bottom: $space-small;
+
+        p{
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+    }
+
+    .stage__actions{
+        @include flex-wrap;
+    }
+}
+
+
+/* STAGE 2C */
+
+.stage-2c{
+    .result{
+        background-color: $neutral;
+        @include two-col-centered;
+    }
+
+    .result__image{
+        justify-content: flex-start;
+
+        img{
+            max-width: 300px;
+        }
+    }
+
+    .stage__question{
+        margin-bottom: $space-small;
+
+        p{
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+    }
+
+    .stage__actions{
+        @include flex-wrap;
+    }
+}
+
+
+/* STAGE 3E */
+
+.stage-3e{
+    .result{
+        background: $warning;
+        @include two-col-centered;
+    }
+
+    .result__image{
+        justify-content: flex-start;
+
+        img{
+            max-width: 300px;
+        }
+    }
+
+    .result__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .result__actions{
+        @include flex-wrap;
+    }
+}
+
+
+/* STAGE 3F */
+
+.stage-3f{
+    .result{
+        background-color: $success;
+        @include two-col-centered;
+    }
+
+    .result__image{
+        justify-content: flex-start;
+
+        img{
+            max-width: 300px;
+        }
+    }
+
+    .result__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .result__actions{
+        @include flex-wrap;
+    }
+}
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px){
+    main{
+        padding: $space-small;
+    }
+
+    h1{
+        margin-bottom: $space-small;
+    }
+
+    .stage--split.active{
+        grid-template-columns: 1fr;
+    }
+
+    .image{
+        img{
+            max-width: 320px;
+        }
+    }
+
+    .result__image{
+        justify-content: center;
+
+        img{
+            max-width: 240px;
+        }
+    }
+
+    .intro__actions, .stage__actions, .result__actions{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn{
+        width: 100%;
+        max-width: 360px;
+    }
+
+    .mail{
+        max-width: 100%;
+
+        &__header{
+            flex-direction: column;
+        }
+
+        &__sender{
+            align-items: flex-start;
+        }
+
+        &__avatar{
+            width: 3rem;
+            height: 3rem;
+        }
+
+        &__name{
+            font-size: $font-h3;
+        }
+
+        &__body{
+            padding: $space-small;
+        }
+
+        &__logo{
+            width: 140px;
+        }
+    }
+
+    .login{
+        &__content{
+            padding: $space-small;
+        }
+
+        &__box{
+            flex-direction: column;
+            gap: $space-small;
+            padding: $space-small;
+        }
+
+        &__form, &__form input, &__btn{
+            max-width: 100%;
+            width: 100%;
+        }
+
+        &__mitid{
+            img{
+                width: 220px;
+            }
+        }
+    }
+
+    .result{
+        grid-template-columns: 1fr;
+        padding: $space-small;
+
+        &__icon{
+            justify-content: flex-start;
+
+            i{
+                font-size: 3rem;
+            }
+        }
+    }
+
+
+    .stage-2c, .stage-3e, .stage-3f{
+        .result{
+            grid-template-columns: 1fr;
+        }
+
+        .result__image{
+            justify-content: center;
+
+            img{
+                max-width: 240px;
+            }
+        }
+    }
+
+    .stage-3b{
+        .result__image{
+            img{
+                width: 100%;
+                max-width: 260px;
+            }
+        }
+    }
+
+    .stage-3a{
+        .result{
+            grid-template-columns: 1fr;
+            gap: $space-small;
+        }
+
+        .result__icon{
+            justify-content: center;
+
+            i{
+                font-size: 2.5rem;
+            }
+        }
+
+        .result__image{
+            justify-content: center;
+
+            img{
+                max-width: 200px;
+            }
+        }
+
+        .result__content{
+            h2{
+                font-size: $font-h3;
+            }
+
+            p, li{
+                font-size: $font-small;
+            }
+
+            ul{
+                padding-left: $space-small;
+            }
+        }
+    }
+}

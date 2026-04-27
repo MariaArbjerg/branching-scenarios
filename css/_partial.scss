@@ -1,2 +1,109 @@
-/* Variabler */
+/* VARIABLER */
+$bg: #ffffff;
+$text: #111111;
+$cta: #d9d9d9;
+$cta-hover: #002432;
+$cta-hover-text: #e4e4e4;
+$light-grey: #f5f5f5;
+$border-grey: #d9d9d9;
 
+$danger: #f5d0d0;
+$warning: #f2dda4;
+$success: #d8f3dc;
+$neutral: #edf0f2;
+
+$space: 2rem;
+$space-small: 1rem;
+$space-large: 3rem;
+
+/* Clamp gør automatisk responsivt! Minimums størrelse, flydende størrelse & så max størrelse */
+$font-base: clamp(1rem, 0.9rem + 0.4vw, 1.25rem);
+$font-h1: clamp(2rem, 1.5rem + 2vw, 3.5rem);
+$font-h2: clamp(1.6rem, 1.3rem + 1.2vw, 2.5rem);
+$font-h3: clamp(1.25rem, 1.1rem + 0.7vw, 1.75rem);
+$font-small: clamp(0.95rem, 0.85rem + 0.3vw, 1.1rem);
+
+$content-width: 1100px;
+$mail-width: 900px;
+$image-width: 500px;
+
+$radius-small: 0.35rem;
+$radius-medium: 1rem;
+$radius-pill: 999px;
+
+
+
+/* MIXINS */
+
+@mixin two-col-centered{
+    /* 2 kolonner: billede+tekst, centreret vertikalt */
+    display: grid;
+    grid-template-columns: clamp(180px, 25vw, 300px) 1fr;
+    align-items: center;
+}
+
+@mixin flex-center {
+    /* Centrerer indhold både horisontalt og vertikalt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-between {
+    /* Placerer elementer med space-between og aligner i toppen */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+@mixin flex-wrap {
+    /* Flex container der kan wrappe med mellemrum mellem elementer */
+    display: flex;
+    flex-wrap: wrap;
+    gap: $space / 2;
+}
+
+@mixin two-column-grid {
+    /* 2-kolonne grid layout (bruges fx til velkomstside) */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space;
+    align-items: center;
+}
+
+@mixin result-grid {
+    /* Grid layout til resultatsider (ikon / tekst / billede) */
+    display: grid;
+    grid-template-columns: clamp(60px, 8vw, 100px) 1fr clamp(180px, 20vw, 250px);
+    gap: $space;
+    align-items: start;
+}
+
+@mixin button-reset {
+    /* Fjerner default button styling */
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+@mixin btn {
+    /* Standard knap styling */
+    @include button-reset;
+    padding: 1rem 2rem;
+    border-radius: $radius-pill;
+    font-size: $font-base;
+}
+
+@mixin card {
+    /* Giver card-look med padding og afrundede hjørner */
+    padding: $space;
+    border-radius: $radius-medium;
+    margin-bottom: $space;
+}
+
+@mixin image-fluid {
+    /* Gør billeder responsive */
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
