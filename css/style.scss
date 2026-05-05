@@ -56,12 +56,29 @@ p {
     @include btn;
     background-color: $cta;
     color: $text;
-    transition: all 0.2s ease;
+    text-decoration: none;
+    font-weight: 400;
+    border: none;
+    cursor: pointer;
 
     &:hover{
         background-color: $cta-hover;
         color: $cta-hover-text;
-        transform: translateY(-2px);
+        text-decoration: none;
+    }
+
+    &.secondary{
+        background-color: $cta;
+        color: $text;
+        text-decoration: none;
+        font-weight: 400;
+        border: none;
+
+        &:hover{
+            background-color: $cta-hover;
+            color: $cta-hover-text;
+            text-decoration: none;
+        }
     }
 }
 
@@ -358,6 +375,17 @@ header{
 }
 
 
+.actions__buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: $space-small;
+
+    .btn {
+        width: fit-content;
+    }
+}
+
 /* STAGE 3B */
 
 .result--warning {
@@ -505,6 +533,58 @@ header{
         @include flex-wrap;
     }
 }
+
+/* PHISHING SIDE */
+
+.phishing-page{
+    max-width: $content-width;
+    margin: 0 auto;
+}
+
+.phishing-card{
+    @include card;
+    background-color: $light-grey;
+    padding: $space;
+}
+
+.phishing-card__intro{
+    margin-bottom: $space;
+
+    i{
+        font-size: 3rem;
+        margin-bottom: $space-small;
+        color: $cta;
+    }
+
+    p{
+        max-width: 850px;
+    }
+}
+
+.phishing-card__grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $space;
+    margin-bottom: $space;
+}
+
+.phishing-box{
+    background-color: $bg;
+    border: 1px solid $border-grey;
+    border-radius: $radius-small;
+    padding: $space-small;
+
+    ul{
+        padding-left: $space;
+        margin-bottom: 0;
+    }
+
+    li{
+        margin-bottom: 0.5rem;
+    }
+}
+
+
 
 
 
@@ -682,6 +762,31 @@ header{
     .stage-2a{
         .stage__actions{
             margin-top: $space-small;
+        }
+    }
+
+    .actions__buttons {
+    flex-direction: column;
+    gap: $space-small;
+
+    .btn {
+        width: 100%;
+        max-width: 360px;
+        }
+    }
+
+    .phishing-card{
+        padding: $space-small;
+    }
+
+    .phishing-card__grid{
+        grid-template-columns: 1fr;
+        gap: $space-small;
+    }
+
+    .phishing-card__intro{
+        i{
+            font-size: 2.5rem;
         }
     }
 }
